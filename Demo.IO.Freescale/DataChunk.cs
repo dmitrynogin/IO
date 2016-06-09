@@ -11,6 +11,7 @@ namespace Demo.IO.Freescale
     {
         public DataChunk(FreescaleReader reader)
         {
+
         }
     }
 }

@@ -18,7 +18,9 @@ namespace Demo.IO.Freescale.Reading
         }
 
         protected override Protocol Protocol => Protocol.Undefined
-            .Support<SessionStart>(1);
+            .Support<SessionStart>(1)
+            .Support<Heartbeat>(100)
+            .Support<DataChunk>(101);
 
         public override Type ReadDiscriminator() =>
             Token("discriminator", Protocol[Reader.ReadInt32BE()]);

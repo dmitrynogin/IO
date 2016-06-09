@@ -43,6 +43,7 @@
     <Compile Include="TemperatureReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reading\TurboGadgetReader.cs" />
+    <Compile Include="Writing\TurboGadgetWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo.IO.Freescale\Demo.IO.Freescale.csproj">
