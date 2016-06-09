@@ -19,14 +19,7 @@ namespace Demo.IO
         protected IOClient(TokenWriter writer, TokenReader reader)
         {
             Writer = writer;
-
-            var subject = new Subject<object>();
-            Task.Run(() =>
-            {
-                foreach (var item in new MessageReader(reader))
-                    subject.OnNext(item);
-            });
-            Reader = subject;            
+            Reader = new MessageSequence(reader);
         }
         
         protected TokenWriter Writer { get; }

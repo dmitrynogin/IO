@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Writing\TokenWriter.cs" />
-    <Compile Include="Reading\MessageReader.cs" />
+    <Compile Include="Reading\MessageSequence.cs" />
     <Compile Include="IOClient.cs" />
     <Compile Include="System.IO\BigEndianWriter.cs" />
     <Compile Include="Logging\Log.cs" />
