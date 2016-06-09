@@ -18,11 +18,11 @@ namespace Demo.IO
     {
         protected IOClient(TokenWriter writer, TokenReader reader)
         {
-            Writer = writer;
-            Reader = new MessageSequence(reader);
+            Output = writer;
+            Input = new Dispatcher(new MessageReader(reader));
         }
         
-        protected TokenWriter Writer { get; }
-        protected IObservable<object> Reader { get; }
+        protected TokenWriter Output { get; }
+        protected Dispatcher Input { get; }
     }
 }

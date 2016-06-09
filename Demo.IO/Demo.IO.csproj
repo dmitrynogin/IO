@@ -60,8 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reading\MessageReader.cs" />
     <Compile Include="Writing\TokenWriter.cs" />
-    <Compile Include="Reading\MessageSequence.cs" />
+    <Compile Include="Reading\Dispatcher.cs" />
     <Compile Include="IOClient.cs" />
     <Compile Include="System.IO\BigEndianWriter.cs" />
     <Compile Include="Logging\Log.cs" />

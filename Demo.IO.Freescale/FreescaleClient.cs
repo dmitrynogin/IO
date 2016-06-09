@@ -15,23 +15,25 @@ namespace Demo.IO.Freescale
         public FreescaleClient(TokenWriter writer, TokenReader reader) 
             : base(writer, reader)
         {
-            Reader
+            Input
                 .OfType<Heartbeat>()
                 .Subscribe(h => Heartbeat?.Invoke(this, h));
+
+            Input.Enable();
         }
 
         public event EventHandler<Heartbeat> Heartbeat;
 
         public async Task<DataChunk[]> GetNDataChunks(int count = 2) =>
-            await Reader
+            await Input
                 .OfType<DataChunk>()
                 .Take(count)                
                 .ToArray();        
 
         public void IssueHeartbeat() =>
-            Writer.WriteDiscriminator(100);
+            Output.WriteDiscriminator(100);
 
         public void IssueDataChunk() =>
-            Writer.WriteDiscriminator(101);
+            Output.WriteDiscriminator(101);
     }
 }

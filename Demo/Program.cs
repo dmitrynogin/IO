@@ -35,7 +35,6 @@ namespace Demo
                 var t = Client.GetNDataChunks(2);
                 Client.IssueDataChunk();
                 Client.IssueDataChunk();
-                Client.IssueDataChunk();
                 Console.WriteLine(t.Result);             
             }
         }
